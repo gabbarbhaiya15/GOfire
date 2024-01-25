@@ -38,7 +38,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 
     return(
-    <form onSubmit={Checkdatas} method="post">
+    <form action="https://gofirebackend.onrender.com/login" onSubmit={Checkdatas} method="post">
     <div class="card">
     <div class="circle"></div>
     <div class="circle"></div>
