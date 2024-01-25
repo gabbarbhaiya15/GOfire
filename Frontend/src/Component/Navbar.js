@@ -25,7 +25,7 @@ function clicked(){
 }
 const fetchuser= async(query) =>{
   setsearch(query);
-await axios.post("http://localhost:5000/search",{query},{withcredentials:true})
+await axios.post("https://gofirebackend.onrender.com/search",{query},{withcredentials:true})
 .then((res)=>{
   setsearchbox("true");
   console.log(res.data);
