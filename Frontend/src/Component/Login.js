@@ -14,6 +14,7 @@ import { Link, useNavigate } from "react-router-dom";
 
   const Checkdatas = async () => {
     console.log("checking");
+     e.preventDefault();
    await axios.post('https://gofirebackend.onrender.com/login',{LEmail,Lpassword},{withCredentials:true})
    .then((users) => { 
    console.log("login in")
@@ -45,7 +46,9 @@ import { Link, useNavigate } from "react-router-dom";
     <p class="title">Login Form</p>
             <input placeholder="Email"   class="username input" type="email" value={LEmail}  onChange = {(e)=>  setLEmail(e.target.value) } />
             <input placeholder="Password"    class="password input" type="password"  value={Lpassword}  onChange = {(e)=>  setLpassword(e.target.value) } />
-            <button class="btn" className='login' type="submit" onClick={Checkdatas}>Login</button>   
+   
+            <button type="button" class=" login" onClick={Checkdatas}>Login</button>
+
     </div>
 
 </div>
