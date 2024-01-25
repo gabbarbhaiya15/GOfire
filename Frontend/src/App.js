@@ -32,7 +32,7 @@ function App() {
     <div className='mainbody'>
   <UserProvider>
    
-   <BrowserRouter>
+   <BrowserRouter basename="/">
    <div className='app-nav'>
 <Navbar/>
 </div>
