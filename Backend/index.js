@@ -28,6 +28,7 @@ const userdetail = require('./controller/Userdetail');
 
 const app = express();
 app.use(express.json());
+
 app.use(bodyParser.urlencoded({ extended: true }));
 const port =  process.env.PORT || 5000;
 app.use(bodyParser.json());
@@ -49,7 +50,6 @@ app.use(cookieParser());
 
 
 app.use('/register', signup);
-
 app.use('/login', Login);
 app.use('/userdetail', userdetail);
 app.use('/protected',protected)
