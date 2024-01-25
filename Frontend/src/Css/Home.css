@@ -1,0 +1,161 @@
+
+   /* styling of Input */
+  #Home-Box{
+    margin-top: 10vh;
+    display: flex !important;
+    flex-direction: column;
+    
+    align-items: center;
+    
+  }
+  .post-card {
+    width: 25vw !important;
+
+    margin: 20px;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+   
+    
+  }
+  
+  .post-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    z-index: 1;
+  }
+  
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .username {
+    font-weight: bold;
+  }
+
+  .post-image {
+    width: 100%;
+    height:300px;
+    z-index: -1;
+    object-fit: cover;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .action-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .comments-section {
+    padding: 10px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+  }
+  
+  .comment {
+    margin: 5px 0;
+  }
+  
+  .comment-username {
+    font-size: small;
+    font-weight: bold;
+  }
+  
+  .comment-form {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .comment-box {
+    flex: 1;
+  
+    border: none;
+    border-radius: 15px;
+    padding: 8px;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    font-size: small;
+    font-weight: bold;
+  }
+  .comment-profile-pic{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+  }
+  
+  .post-button {
+    border: none;
+   
+    color: rgb(3, 2, 2);
+    background: #016DD9;
+    
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+   font-weight: 500;
+  }
+  .post-button:hover {
+    animation: shake3856 0.3s linear infinite both;
+   }
+   
+   @keyframes shake3856 {
+    0% {
+     -webkit-transform: translate(0);
+     transform: translate(0);
+    }
+   
+    20% {
+     -webkit-transform: translate(-2px, 2px);
+     transform: translate(-2px, 2px);
+    }
+   
+    40% {
+     -webkit-transform: translate(-2px, -2px);
+     transform: translate(-2px, -2px);
+    }
+   
+    60% {
+     -webkit-transform: translate(2px, 2px);
+     transform: translate(2px, 2px);
+    }
+   
+    80% {
+     -webkit-transform: translate(2px, -2px);
+     transform: translate(2px, -2px);
+    }
+   
+    100% {
+     -webkit-transform: translate(0);
+     transform: translate(0);
+    }
+   }
+   
+  @media  screen and (max-width: 768px) {
+    .post-card{
+      width: 60vw !important;
+    }
+    input{
+      width: 66% !important;
+    }
+  }

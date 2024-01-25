@@ -1,0 +1,18 @@
+.mainbody{
+ 
+    
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+.app-nav{
+    position: fixed;
+    z-index: 1;
+}
+.app-footer{
+    position: fixed;
+    top: 90vh;
+}

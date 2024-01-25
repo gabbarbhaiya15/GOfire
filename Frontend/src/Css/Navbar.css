@@ -1,0 +1,208 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8; /* Set your desired background color */
+  }
+  
+  .mainbody {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make sure the container takes at least the full height of the viewport */
+  }
+  
+  nav {
+    /* Set your desired navbar background color */
+
+    padding: 10px;
+    text-align: center;
+    -webkit-border-radius: 180px;
+    -moz-border-radius: 180px;
+    border-radius: 180px;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  background-color:;
+
+  }
+  
+  .group {
+    display: flex;
+   width: 100%;
+ 
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 20px;
+  }
+  
+  .searchinput {
+ 
+    width: 30vw;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-image: linear-gradient(to right bottom, #e5e2e2, #ebe9ea, #f2f0f1, #f8f8f8, #ffffff);
+    opacity: 0.7;
+    background-color: transparent !important;
+  
+    color: #0d0c22;
+    transition: .3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .searchinput::placeholder {
+    color: #9e9ea7;
+  }
+  
+  .searchinput:focus, searchinput:hover {
+    outline: none;
+    border-color: rgba(234, 76, 137, 0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+  }
+  
+  .icon {
+    fill: #9e9ea7;
+    width: 1.5vw;
+    height: 1rem;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .icon:hover {
+    color: #ea4c89;
+  }
+  
+  #GOfirelogo {
+    width: 20vw;
+    height: 7vh;
+    -webkit-border-radius: 180px;
+    -moz-border-radius: 180px;
+    border-radius: 180px;
+
+  
+  }
+  
+  #logos {
+   
+    width: 25%;
+    display: flex;
+  
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #profile-pics {
+    width: 2rem;
+    height: 2rem;
+    clip-path: circle(at center);
+  }
+  #profile-picture {
+    width: 2rem;
+    height: 2rem;
+    clip-path: circle(at center);
+    display: none !important;
+  }
+  .post-logo {
+
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+  }
+  .profile-log {
+    width: 2vw !important;
+    margin-left: 10px;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    display: none !important;
+  
+  }
+  
+  .post-logo:hover {
+    opacity: 0.8;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .searchinput {
+      margin: 0;
+      width: 100% !important;
+      height: 5vh !important;
+    }
+    #logos {
+      display: none;
+    }
+    #GOfirelogo {
+      width: 25vw;
+      height: 5vh;
+    }
+
+    .post-logos {
+      width: 2vw !important;
+      margin-left: 10px;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+      display: block !important;
+    }
+    #profile-picture {
+      width: 2rem;
+      height: 2rem;
+      clip-path: circle(at center);
+      display: flex !important;
+    }
+    .profile-log {
+      width: 2vw !important;
+      margin-left: 10px;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+     
+    } 
+    .search-dropbox{
+      width: 50% !important;
+      left: 37% !important;
+      margin-top: 4px;
+    }
+  }
+  nav{
+  
+    width: 90vw !important;
+    height: 10vh;
+    -webkit-border-radius: 180px;
+-moz-border-radius: 180px;
+border-radius: 180px;
+margin-top: 10px;
+  }
+  .search-dropbox {
+    width: 30%;
+  border-radius: 8px;
+    position: absolute;
+    top: 60px;
+    left: 27%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to right top, #d4d4d4, #d3d3d3, #d2d2d3, #d1d1d2, #d0d0d2, #ced2db, #c9d4e3, #c0d8eb, #a9e1fa, #8aecff, #66f6ff, #47fff3);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  margin-top: 10px;
+    z-index: 1;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .search-closebox {
+    display: none;
+  }
+  
+  .search-dropbox .cross {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+  }
+  
