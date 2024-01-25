@@ -38,7 +38,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 
     return(
-    <form>
+    <form onSubmit={Checkdatas}>
     <div class="card">
     <div class="circle"></div>
     <div class="circle"></div>
