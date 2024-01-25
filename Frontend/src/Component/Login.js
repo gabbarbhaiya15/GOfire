@@ -18,7 +18,8 @@ import { Link, useNavigate } from "react-router-dom";
    .then((users) => { 
    console.log("login in")
    alert("welcome 🎊🎊🎉🎇 ")
-   window.location.reload();
+   navigate('/')
+
   
    
   
