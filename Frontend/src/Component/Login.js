@@ -38,7 +38,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 
     return(
-    <form onSubmit={Checkdatas}>
+    <form onSubmit={Checkdatas} method="post">
     <div class="card">
     <div class="circle"></div>
     <div class="circle"></div>
@@ -47,7 +47,7 @@ import { Link, useNavigate } from "react-router-dom";
             <input placeholder="Email"   class="username input" type="email" value={LEmail}  onChange = {(e)=>  setLEmail(e.target.value) } />
             <input placeholder="Password"    class="password input" type="password"  value={Lpassword}  onChange = {(e)=>  setLpassword(e.target.value) } />
    
-            <button type="button" class=" login" onClick={Checkdatas}>Login</button>
+            <button type="submit" class=" login" >Login</button>
 
     </div>
 
