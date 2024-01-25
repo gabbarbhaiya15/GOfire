@@ -28,7 +28,7 @@ const userdetail = require('./controller/Userdetail');
 
 const app = express();
 app.use(express.json());
-
+mongoose.set("strictQuery", true);
 app.use(bodyParser.urlencoded({ extended: true }));
 const port =  process.env.PORT || 5000;
 app.use(bodyParser.json());
@@ -46,9 +46,11 @@ app.use(cookieParser());
   },)
   .then(()=>{console.log('connect')})
   .catch((err)=>{console.log(err)}) ;
-
-
-
+app.use(cors());
+app.get("/" ,(req, res) =>{
+  res.setHeader("Access-Control-Allow-Credentials","true" );
+  res.send(" API is running...");
+}
 app.use('/register', signup);
 app.use('/login', Login);
 app.use('/userdetail', userdetail);
