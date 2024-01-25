@@ -9,7 +9,7 @@ export  const UserProvider =({ children})=>{
     useEffect(()=>{
         const contex = async ()=>{
 
-        await  axios.get("http://localhost:5000/userdetail",{withCredentials:true})
+        await  axios.get("https://gofirebackend.onrender.com/userdetail",{withCredentials:true})
         .then((res)=>{
             
             setuserData(res.data.result);
