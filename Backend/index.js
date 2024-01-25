@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const port =  process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(cors({credentials: true,
-  origin: ['http://localhost:3000']
+  origin: ['https://gofirebackend.onrender.com']
 
 }));
 app.use(cookieParser());
