@@ -12,7 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
   const  [Lpassword, setLpassword] = useState("");
   const navigate = useNavigate() ;
 
-  const Checkdatas = async () => {
+  const Checkdatas = async (e) => {
     console.log("checking");
      e.preventDefault();
    await axios.post('https://gofirebackend.onrender.com/login',{LEmail,Lpassword},{withCredentials:true})
