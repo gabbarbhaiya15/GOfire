@@ -10,6 +10,7 @@ import axios from "axios";
  
 export default function Signup(){
 
+  const navigate = useNavigate();
   const [input, setinput] = useState("");
     const  [password, setpassword] = useState("");
     const [Email, setEmail] = useState("");
