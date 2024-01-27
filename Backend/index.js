@@ -21,10 +21,13 @@ const Comment = require('./controller/Comment');
 const protected = require('./controller/Protected');
 const search = require('./controller/Search');
 const userdetail = require('./controller/Userdetail');
+const path = require('path');
 
 const app = express();
-const port = process.env.PORT || 5000;
+app.use(express.static(path.join(__dirname, 'public')));
 
+
+const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -49,6 +52,9 @@ app.use(cors(corsOptions));
 app.get("/", (req, res) => {
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.send("API is running...");
+});
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Your routes here
