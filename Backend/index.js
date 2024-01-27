@@ -24,7 +24,7 @@ const userdetail = require('./controller/Userdetail');
 const path = require('path');
 
 const app = express();
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 const port = process.env.PORT || 5000;
 app.use(express.json());
@@ -67,6 +67,12 @@ app.use('/unfollow', Unfollow);
 app.use('/updateprofile', UpdateProfile);
 app.use('/friendpost', Friendspost);
 app.use('/search', search);
+
+app.use(express.static('Frontend/build'))
+    const path = require('path')
+    app.get("*",(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'Frontend','build','index.html'))
+    })
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
