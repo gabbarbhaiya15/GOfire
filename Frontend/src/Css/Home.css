@@ -153,7 +153,7 @@
    
   @media  screen and (max-width: 768px) {
     .post-card{
-      width: 60vw !important;
+      width: 70vw !important;
     }
     input{
       width: 66% !important;
