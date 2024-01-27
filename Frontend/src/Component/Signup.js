@@ -18,14 +18,14 @@ export default function Signup(){
       await axios.post('https://gofirebackend.onrender.com/register',{input,password, Email},{withCredentials:true})
       .then((res)=>{console.log("collected")
       alert("welcome 😊😊");
-      window.location.reload();
+     navigate('/login')
     
  
     })
       .catch((err)=>{console.log("GADBAD HO GYA BHAIII ")
     
       alert("welcome 😊😊");
-      window.location.reload();
+     navigate('/login')
     })
   }
 
