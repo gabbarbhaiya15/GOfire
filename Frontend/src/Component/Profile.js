@@ -431,16 +431,7 @@ const CoverpicDetails = async ()=>{
     </div>
   )}
 
-  <div className="comment-form">
-    <input
-      type="text"
-      placeholder="Add a comment..."
-      value={newComment[item.postId] }
-      className='comment-box'
-      onChange={(e) => setNewComment(e.target.value)}
-    />
-  <button onClick={() => makeComment(item._id)} id='post-button'><img width="36" height="36" src="https://img.icons8.com/arcade/36/sent.png" alt="sent"/></button>
-  </div>
+ 
   
 
 </div>
