@@ -119,7 +119,7 @@ body {
   box-shadow: none;
 }
 
-@media screen and (max-width: 668px) {
+@media screen and (max-width: 768px) {
   #wrapper{
     width: 80vw !important;
     height: 64.7vh;
