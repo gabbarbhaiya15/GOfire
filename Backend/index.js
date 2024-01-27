@@ -71,7 +71,7 @@ app.use('/search', search);
 app.use(express.static('Frontend/build'))
     
     app.get("*",(req,res)=>{
-        res.sendFile(path.resolve(__dirname,'Frontend','build','index.html'))
+        res.sendFile(path.resolve(__dirname,'Frontend','public','index.html'))
     })
 
 app.listen(port, () => {
