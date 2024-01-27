@@ -69,7 +69,7 @@ app.use('/friendpost', Friendspost);
 app.use('/search', search);
 
 app.use(express.static('Frontend/build'))
-    const path = require('path')
+    
     app.get("*",(req,res)=>{
         res.sendFile(path.resolve(__dirname,'Frontend','build','index.html'))
     })
