@@ -68,7 +68,7 @@ app.use('/updateprofile', UpdateProfile);
 app.use('/friendpost', Friendspost);
 app.use('/search', search);
 
-app.use(express.static('Frontend/build'))
+app.use(express.static('Frontend/public'))
     
     app.get("*",(req,res)=>{
         res.sendFile(path.resolve(__dirname,'Frontend','public','index.html'))
