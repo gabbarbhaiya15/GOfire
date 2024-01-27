@@ -258,7 +258,7 @@ body {
 
 .menu li {
   position: absolute;
-  top: -40%;
+  top: -90%;
   left: 45%;
   transform: translateX(-50%);
   transition: all 0.4s;
