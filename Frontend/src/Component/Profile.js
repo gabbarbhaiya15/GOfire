@@ -298,7 +298,7 @@ const CoverpicDetails = async ()=>{
       <div className='aside-box'>
       
        <div className='Aside-box'>
-       <span >&times;</span>
+      
        <div className='Aside-coverpic'  style={asidecover}>
        <img 
        src={`${userData.profilepic}?${Math.random()}`}
