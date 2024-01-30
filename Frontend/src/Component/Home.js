@@ -115,7 +115,7 @@ axios.get("https://gofirebackend.onrender.com/allpost",{withCredentials:true})
 })
 
 
-},[])
+},[Like,newComment])
 
 
 
