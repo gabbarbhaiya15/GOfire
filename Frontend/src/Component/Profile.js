@@ -46,7 +46,7 @@ const Logout = async () => {
 
 
 
-}
+
  const Deletepost = async (postId)=>{
 
 await axios.delete(`https://gofirebackend.onrender.com/remove/${postId}`,{withCredentials:true})
