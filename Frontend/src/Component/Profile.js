@@ -32,20 +32,17 @@ const [Aside,setaside] = useState(false);
   setaside(prevstate=>!prevstate);
 }
 
- const Logout = async ()=>{
+const Logout = async () => {
   console.log("Logout");
-await axios.get('https://gofirebackend.onrender.com/logout',{withCredentials:true})
-
-.then((user)=>{
-window.location.reload();
-navigate('/')
-
-
-  }) 
-  .catch((error)=>{
-      console.log("Error in logging out");
-})  
-
+  try {
+    await axios.get('https://gofirebackend.onrender.com/logout', { withCredentials: true });
+    console.log("User logged out");
+    window.location.reload();
+    navigate('/');
+  } catch (error) {
+    console.log("Error in logging out");
+  }
+};
 
 
 
