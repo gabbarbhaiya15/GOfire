@@ -34,7 +34,7 @@ const [Aside,setaside] = useState(false);
 
  const Logout = async ()=>{
   console.log("Logout");
-await axios.get('/logout',{withCredentials:true})
+await axios.get('https://gofirebackend.onrender.com/logout',{withCredentials:true})
 
 .then((user)=>{
 console.log("User logged out");
