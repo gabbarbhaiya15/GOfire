@@ -39,7 +39,7 @@ await axios.get('https://gofirebackend.onrender.com/logout',{withCredentials:tru
 .then((user)=>{
 
 
-navigate('/')
+
   }) 
   .catch((error)=>{
       console.log("Error in logging out");
