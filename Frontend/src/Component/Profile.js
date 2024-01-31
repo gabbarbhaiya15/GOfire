@@ -38,7 +38,7 @@ await axios.get('https://gofirebackend.onrender.com/logout',{withCredentials:tru
 
 .then((user)=>{
 
-window.location.reload();
+
 navigate('/')
   }) 
   .catch((error)=>{
