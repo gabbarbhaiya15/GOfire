@@ -37,7 +37,8 @@ const [Aside,setaside] = useState(false);
 await axios.get('https://gofirebackend.onrender.com/logout',{withCredentials:true})
 
 .then((user)=>{
-
+window.location.reload();
+navigate('/')
 
 
   }) 
