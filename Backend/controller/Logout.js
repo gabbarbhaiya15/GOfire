@@ -14,7 +14,7 @@ console.log(token);
 try{
 res.clearCookie('token');
 console.log(token)
-return res.status(201).json({message: 'Logout successful'})
+return res.status(200).json({message: 'Logout successful'})
 }
 catch(err){
 return res.status(400).send({message: err.message});
