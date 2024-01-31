@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import '../Css/Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
@@ -6,40 +7,41 @@ import { useUser } from "../UserContext";
 
 export  default function Home(){
 
+  const navigate = useNavigate();
+
 const [Post,setPost]= useState([])
 const [Like,setLike] = useState(false)
 const [Comment,setComment] = useState(false)
 
-const [Count, setCount] = useState(0);
+const [Count, setCount] = useState(false);
 const [data,setData] = useState([])
 const {userData} = useUser();
 
 const [comments, setComments] = useState([]);
-const [newComment, setNewComment] = useState({});
+const [newComment, setNewComment] = useState("");
 const [showComments, setShowComments] = useState(false);
 
-const addComment = () => {
-  if (newComment.trim() !== '') {
-    setComments([...comments, newComment]);
-    setNewComment('');
-  }
-};
+
 
 
 const makeComment = (postId)=>{
-  axios.put("https://gofirebackend.onrender.com/comment",{postId :postId,text:newComment},{withCredentials:true})
+  axios.put("http://localhost:5000/comment",{postId :postId,text:newComment},{withCredentials:true})
   .then((res)=>{
+
     console.log("commented successful")
-   setNewComment('')
+   
+    setNewComment("")
+    setCount(!Count)
   })
   .catch((error)=>{
 console.log("error in client side while making commnent ")
+
   })
 }
 
 const likepost=(id)=>{
 
-  axios.put("https://gofirebackend.onrender.com/like",{postId:id},{withCredentials:true})
+  axios.put("http://localhost:5000/like",{postId:id},{withCredentials:true})
   .then((res)=>{
 console.log(res.data)
 setLike(prevstate=>!prevstate)
@@ -55,7 +57,8 @@ const newData = data.map(item=>{
  }
 })
 setData(newData)
-window.location.reload();
+setCount(!Count)
+console.log(Count)
 
 }).catch(err=>{
 console.log(err)
@@ -72,7 +75,7 @@ console.log(err)
 
 const unlikepost=(id)=>{
 
-  axios.put("https://gofirebackend.onrender.com/unlike",{postId:id},{withCredentials:true})
+  axios.put("http://localhost:5000/unlike",{postId:id},{withCredentials:true})
   .then((res)=>{
     console.log(res.data)
     setLike(prevstate=>!prevstate)
@@ -87,7 +90,8 @@ const newData = data.map(item=>{
  }
 })
 setData(newData)
-window.location.reload();
+setCount(!Count)
+console.log(Count)
 }).catch(err=>{
 console.log(err)
 })
@@ -103,7 +107,7 @@ console.log(err)
 
       
 useEffect(()=>{
-axios.get("https://gofirebackend.onrender.com/allpost",{withCredentials:true})
+axios.get("http://localhost:5000/allpost",{withCredentials:true})
 .then((res)=>{
   console.log(res.data);
   const postarray = res.data.map(items=> items);
@@ -111,11 +115,11 @@ axios.get("https://gofirebackend.onrender.com/allpost",{withCredentials:true})
 
 })
 .catch(()=>{
-
+  navigate('/signup')
 })
+},[Count,navigate])
 
 
-},[Like,newComment])
 
 
 
@@ -175,7 +179,7 @@ axios.get("https://gofirebackend.onrender.com/allpost",{withCredentials:true})
           className='comment-box'
           onChange={(e) => setNewComment(e.target.value)}
         />
-      <button onClick={() => makeComment(item._id)} className='post-button'><img width="36" height="36" src="https://img.icons8.com/arcade/36/sent.png" alt="sent"/></button>
+      <button  onClick={() => makeComment(item._id)} className='post-button'><img width="36" height="36" src="https://img.icons8.com/arcade/36/sent.png" alt="sent"/></button>
       </div>
       
 
