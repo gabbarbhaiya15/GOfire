@@ -34,10 +34,11 @@ const [Aside,setaside] = useState(false);
 
  const Logout = async ()=>{
   console.log("Logout");
-await axios.get('https://gofirebackend.onrender.com/logout',{withCredentials:true})
+await axios.get('http://localhost:5000/logout',{withCredentials:true})
 
 .then((user)=>{
 console.log("User logged out");
+window.location.reload();
 navigate('/')
   }) 
   .catch((error)=>{
@@ -50,7 +51,7 @@ navigate('/')
 }
  const Deletepost = async (postId)=>{
 
-await axios.delete(`https://gofirebackend.onrender.com/remove/${postId}`,{withCredentials:true})
+await axios.delete(`http://localhost:5000/remove/${postId}`,{withCredentials:true})
  .then((Result)=>{
    console.log(Result)
  })
@@ -70,10 +71,10 @@ await axios.delete(`https://gofirebackend.onrender.com/remove/${postId}`,{withCr
   
   
   const makeComment = (postId)=>{
-    axios.put("https://gofirebackend.onrender.com/comment",{postId :postId,text:newComment},{withCredentials:true})
+    axios.put("http://localhost:5000/comment",{postId :postId,text:newComment},{withCredentials:true})
     .then((res)=>{
       console.log("commented successful")
-     setNewComment('')
+    
     })
     .catch((error)=>{
   console.log("error in client side while making commnent ")
@@ -86,19 +87,22 @@ await axios.delete(`https://gofirebackend.onrender.com/remove/${postId}`,{withCr
 
  
  useEffect( ()=>{
-  
-axios.get("https://gofirebackend.onrender.com/mypost",{withCredentials:true})
+
+ 
+axios.get("http://localhost:5000/mypost",{withCredentials:true})
 .then((res)=>{
    const picArray = res.data.map(post => post);
 setMypic(picArray);
     })
-.catch((err)=>{})
- },[]) 
+.catch((err)=>{
+  navigate('/login')
+})
+ },[navigate]) 
 
 
  const likepost=(id)=>{
 
-  axios.put("https://gofirebackend.onrender.com/like",{postId:id},{withCredentials:true})
+  axios.put("http://localhost:5000/like",{postId:id},{withCredentials:true})
   .then((res)=>{
 console.log(res.data)
 setLike(prevstate=>!prevstate)
@@ -131,7 +135,7 @@ console.log(err)
 
 const unlikepost=(id)=>{
 
-  axios.put("https://gofirebackend.onrender.com/unlike",{postId:id},{withCredentials:true})
+  axios.put("http://localhost:5000/unlike",{postId:id},{withCredentials:true})
   .then((res)=>{
     console.log(res.data)
     setLike(prevstate=>!prevstate)
@@ -169,7 +173,7 @@ console.log(err)
       
   const checkdata = async ()=>{
   
- await axios.get("https://gofirebackend.onrender.com/protected",{withCredentials:true})  
+ await axios.get("http://localhost:5000/protected",{withCredentials:true})  
  .then((res)=>{
  console.log(res.data);
 
@@ -184,7 +188,7 @@ console.log(" error in checking")
  if(picurl || coverpicurl){
    console.log(picurl)
     
-    fetch("https://gofirebackend.onrender.com/updateprofile",{
+    fetch("http://localhost:5000/updateprofile",{
         method:"put",
         headers:{
             "Content-Type":"application/json",
@@ -298,7 +302,7 @@ const CoverpicDetails = async ()=>{
       <div className='aside-box'>
       
        <div className='Aside-box'>
-      
+       <span >&times;</span>
        <div className='Aside-coverpic'  style={asidecover}>
        <img 
        src={`${userData.profilepic}?${Math.random()}`}
@@ -431,7 +435,7 @@ const CoverpicDetails = async ()=>{
     </div>
   )}
 
- 
+
   
 
 </div>
