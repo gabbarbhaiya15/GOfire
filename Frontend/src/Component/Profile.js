@@ -95,7 +95,7 @@ axios.get("http://localhost:5000/mypost",{withCredentials:true})
 setMypic(picArray);
     })
 .catch((err)=>{
-  navigate('/login')
+
 })
  },[navigate]) 
 
