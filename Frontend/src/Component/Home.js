@@ -115,7 +115,7 @@ axios.get("http://localhost:5000/allpost",{withCredentials:true})
 
 })
 .catch(()=>{
-  navigate('/signup')
+ 
 })
 },[Count,navigate])
 
