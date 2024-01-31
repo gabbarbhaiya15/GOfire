@@ -9,10 +9,10 @@ const jwt = require('jsonwebtoken');
 router.get('/', async (req,res)=>{
 const {token} = req.cookies;
 
-console.log("logging out here ")
-console.log(token);
+
 try{
 res.clearCookie('token');
+    console.log("logging out here ")
 console.log(token)
 return res.status(200).json({message: 'Logout successful'})
 }
