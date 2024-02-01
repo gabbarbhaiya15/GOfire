@@ -95,7 +95,7 @@ setMypic(picArray);
 .catch((err)=>{
   navigate('/login')
 })
- },[navigate]) 
+ },[]) 
 
 
  const likepost=(id)=>{
