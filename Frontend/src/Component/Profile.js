@@ -38,6 +38,7 @@ await axios.get('https://gofirebackend.onrender.com/logout',{withCredentials:tru
 
 .then((user)=>{
 console.log("User logged out");
+ window.location.reload();
 navigate('/')
   }) 
   .catch((error)=>{
@@ -92,8 +93,10 @@ axios.get("https://gofirebackend.onrender.com/mypost",{withCredentials:true})
    const picArray = res.data.map(post => post);
 setMypic(picArray);
     })
-.catch((err)=>{})
- },[]) 
+.catch((err)=>{
+  navigate('/login')
+})
+ },[navigate]) 
 
 
  const likepost=(id)=>{
