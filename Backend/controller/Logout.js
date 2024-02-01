@@ -13,7 +13,7 @@ const {token} = req.cookies;
 try{
 res.clearCookie('token');
     console.log("logging out here ")
-console.log(token)
+
 return res.status(200).json({message: 'Logout successful'})
 }
 catch(err){
