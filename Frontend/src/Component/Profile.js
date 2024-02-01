@@ -32,21 +32,22 @@ const [Aside,setaside] = useState(false);
   setaside(prevstate=>!prevstate);
 }
 
-const Logout = async () => {
+ const Logout = async ()=>{
   console.log("Logout");
-  try {
-    await axios.get('https://gofirebackend.onrender.com/logout', { withCredentials: true });
-    console.log("User logged out");
-    window.location.reload();
-    navigate('/');
-  } catch (error) {
-    console.log("Error in logging out");
-  }
-};
+await axios.get('https://gofirebackend.onrender.com/logout',{withCredentials:true})
+
+.then((user)=>{
+console.log("User logged out");
+navigate('/')
+  }) 
+  .catch((error)=>{
+      console.log("Error in logging out");
+})  
 
 
 
 
+}
  const Deletepost = async (postId)=>{
 
 await axios.delete(`https://gofirebackend.onrender.com/remove/${postId}`,{withCredentials:true})
@@ -72,7 +73,7 @@ await axios.delete(`https://gofirebackend.onrender.com/remove/${postId}`,{withCr
     axios.put("https://gofirebackend.onrender.com/comment",{postId :postId,text:newComment},{withCredentials:true})
     .then((res)=>{
       console.log("commented successful")
-    
+     setNewComment('')
     })
     .catch((error)=>{
   console.log("error in client side while making commnent ")
@@ -85,16 +86,13 @@ await axios.delete(`https://gofirebackend.onrender.com/remove/${postId}`,{withCr
 
  
  useEffect( ()=>{
-
- 
+  
 axios.get("https://gofirebackend.onrender.com/mypost",{withCredentials:true})
 .then((res)=>{
    const picArray = res.data.map(post => post);
 setMypic(picArray);
     })
-.catch((err)=>{
-  navigate('/login')
-})
+.catch((err)=>{})
  },[]) 
 
 
@@ -433,7 +431,16 @@ const CoverpicDetails = async ()=>{
     </div>
   )}
 
-
+  <div className="comment-form">
+    <input
+      type="text"
+      placeholder="Add a comment..."
+      value={newComment[item.postId] }
+      className='comment-box'
+      onChange={(e) => setNewComment(e.target.value)}
+    />
+  <button onClick={() => makeComment(item._id)} id='post-button'><img width="36" height="36" src="https://img.icons8.com/arcade/36/sent.png" alt="sent"/></button>
+  </div>
   
 
 </div>
