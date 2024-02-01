@@ -29,9 +29,9 @@ router.post( '/',async (req,res)=>{
           
           
           res.status(200)
-          .cookie('token', token, {httpOnly:true , expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+          .cookie('token', token, {httpOnly:true , expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),  sameSite: 'None',
                                   secure: true, // recommended for security, set to true in production when using HTTPS
-          sameSite: 'None',
+        
                                   
                                   })
           .send({
