@@ -9,7 +9,7 @@ const ForgetPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/forgetpassword', { email });
+            const response = await axios.post('https://gofirebackend.onrender.com/forgetpassword', { email });
             setMessage(response.data.message);
         } catch (error) {
             setMessage(error.response?.data?.message || 'Something went wrong');
