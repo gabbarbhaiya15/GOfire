@@ -13,6 +13,9 @@ import Friendspost from './Component/Friendspost';
 import { UserProvider } from './UserContext';
 import Footer from './Component/Footer';
 import './App.css';
+import ForgetPassword from './Component/Forgetpassword';
+import ResetPassword from './Component/Resetpassword';
+
 
 
 
@@ -39,6 +42,8 @@ function App() {
 <Routes>
    < Route path='/signup' element={<Signup/>} />
    <Route path ='/login' element ={<Login/>} />
+    <Route path ='/forgetpasword' element ={<ForgetPassword/>} />
+   <Route path ='/Resetpassword' element ={<ResetPassword/>} />
   <Route path ='/' element ={<Home/>} />
    <Route exact path ='/profile' element ={<Profile/>} /> 
    <Route path='/post' element={<Post/>} />
