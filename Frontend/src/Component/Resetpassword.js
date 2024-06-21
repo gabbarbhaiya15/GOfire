@@ -18,7 +18,7 @@ const ResetPassword = () => {
             return;
         }
         try {
-            const response = await axios.post(`http://localhost:5000/resetpassword?token=${token}`, { password });
+            const response = await axios.post(`https://gofirebackend.onrender.com/resetpassword?token=${token}`, { password });
             setMessage(response.data.message);
             navigate('/login'); // Redirect to login page after successful reset
         } catch (error) {
