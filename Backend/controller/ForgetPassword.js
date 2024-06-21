@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
             });
 
             const resetToken = jwt.sign({ id: user._id, Email: email }, process.env.JWT_SECRET, { expiresIn: '1h' });
-            const resetLink = `http://localhost:3000/Resetpassword?token=${resetToken}`;
+            const resetLink = `https://gofirfrontend.onrender.com//Resetpassword?token=${resetToken}`;
 
             const mailOptions = {
                 from: process.env.EMAIL_FROM,
