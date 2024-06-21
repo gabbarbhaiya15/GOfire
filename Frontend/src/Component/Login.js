@@ -35,6 +35,9 @@ export default function Login() {
           <p class="title">Login Form</p>
           <input placeholder="Email" class="username input" type="email" value={LEmail} onChange={(e) => setLEmail(e.target.value)} />
           <input placeholder="Password" class="password input" type="password" value={Lpassword} onChange={(e) => setLpassword(e.target.value)} />
+   <div class="forgot">
+				<Link rel="noopener noreferrer" to={'/forgetpasword'} className='forget_link'>Forgot Password ?</Link>
+			</div>
           <button type="submit" className="login">Login</button>
         </div>
       </div>
