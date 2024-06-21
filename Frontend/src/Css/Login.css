@@ -113,7 +113,24 @@
   background-color: antiquewhite;
   box-shadow: none;
 }
+.forgot {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: rgba(156, 163, 175,1);
+  margin: 8px 0 14px 0;
 
+}
+.forget_link{
+  color: rgb(58, 58, 59);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot a:hover, .signup a:hover {
+  text-decoration: underline rgba(167, 139, 250, 1);
+}
 @media screen and (max-width: 768px) {
  .card{
   width: 75vw !important;
