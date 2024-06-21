@@ -22,10 +22,13 @@ const protected = require('./controller/Protected');
 const search = require('./controller/Search');
 const userdetail = require('./controller/Userdetail');
 const path = require('path');
+const  forget_password = require('./controller/ForgetPassword');
+const ResetPassword = require('./controller/Resetpassword');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
-
-
 const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -51,6 +54,8 @@ app.use(cors(corsOptions));
 // Your routes here
 app.use('/register', signup);
 app.use('/login', Login);
+app.use('/forgetpassword', forget_password);
+app.use('/resetpassword',  ResetPassword);
 app.use('/userdetail', userdetail);
 app.use('/protected', protected);
 app.use('/logout', Logout);
